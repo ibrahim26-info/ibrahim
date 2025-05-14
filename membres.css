@@ -1,0 +1,107 @@
+.members-section {
+    background: #fffdfa;
+    padding: 1px 20px;
+    text-align: center;
+  }
+  
+  .members-title {
+    font-size: 2.5rem;
+    color: #d97706;
+    margin-bottom: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: slideFadeInUp 1s ease-out;
+    position: relative;
+  }
+  
+  .members-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #facc15, #fb923c);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    animation: glow 2s infinite alternate;
+  }
+  
+  .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeInSchema 1s ease-out;
+  }
+  
+  .member-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: memberFadeUp 0.8s ease-out forwards;
+  }
+  
+  .member-card:nth-child(odd) {
+    animation-delay: 0.2s;
+  }
+  .member-card:nth-child(even) {
+    animation-delay: 0.4s;
+  }
+  
+  .member-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+.member-card img {
+  width: 100%;
+  max-width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 20px solid transparent; /* important */
+  border-image: url('/public/img/colorful.png') 60 round;
+  transition: transform 0.3s ease;
+}
+
+  
+  .member-card:hover img {
+    transform: scale(1.05) rotate(1deg);
+  }
+  
+  .member-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .member-card p {
+    font-size: 0.95rem;
+    color: #555;
+    font-style: italic;
+  }
+  
+  /* Animations */
+  @keyframes memberFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* Prevent horizontal overflow globally */
+  body, html {
+    overflow-x: hidden;
+  }
+  
+  /* Optional: Make sure all main wrappers don't exceed the screen */
+  * {
+    box-sizing: border-box;
+  }
+  

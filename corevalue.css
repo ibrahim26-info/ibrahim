@@ -1,0 +1,146 @@
+.core-values-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #fff8e1;
+  background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png'); /* subtle texture */
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #d97706;
+    margin-bottom: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: slideFadeInUp 1s ease-out;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #facc15, #fb923c);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    animation: glow 2s infinite alternate;
+  }
+
+.core-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.core-image {
+  width: 70%;
+  max-width: 800px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon overlay blocks */
+.icon-overlay {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+/* Tooltip-style paragraph */
+.value-description {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(31, 41, 55, 0.9);
+  color: #facc15;
+  padding: 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.icon-overlay:hover .value-description {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Fine-tune positions for each icon */
+.handshake   { top: 45%; right: 12%; }
+.lightbulb   { top: 48%; left: 4%; }
+.plant       { top: -5%; left: 41%; }
+.magnifier   { top: 75%; left: 4%; }
+.bag         { top: 75%; right: 12%; }
+.computer    { top: 18%; left: 4%; }
+.network     { top: 101%; left: 41%; }
+.key         { top: 20%; right: 12%; }
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+  .icon-overlay {
+    width: 100%;
+    position: static;
+    margin: 1rem 0;
+    display: block;
+  }
+
+  .value-description {
+    position: static;
+    transform: none;
+    opacity: 1;
+    width: 100%;
+  }
+}
+/* Add glow/pulse to indicate hover */
+.icon-overlay::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(250, 204, 21, 0.3);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.icon-overlay:hover::after {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 0 12px 4px rgba(250, 204, 21, 0.4);
+}
+
+/* Change cursor and add subtle shake */
+.icon-overlay {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-overlay:hover {
+  transform: scale(1.05);
+}
+.icon-overlay::before {
+  content: "🛈";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #1f2937;
+  color: #facc15;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  z-index: 2;
+  opacity: 0.8;
+}

@@ -1,0 +1,141 @@
+.form-section {
+  background: linear-gradient(to right, #fff7ed, #fffbeb);
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.form-main-title {
+  text-align: center;
+  font-size: 2.75rem;
+  color: #f59e0b;
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: slideFadeInUp 1s ease-out forwards;
+  position: relative;
+  opacity: 0;
+}
+
+.form-main-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #fbbf24, #fb923c);
+  border-radius: 2px;
+  animation: glow 2s infinite alternate;
+}
+
+.form-section-title {
+  font-size: 1.5rem;
+  color: #78350f;
+  margin: 30px 0 10px;
+}
+
+.enactus-form label {
+  font-weight: 600;
+  color: #92400e;
+  display: block;
+  margin-top: 15px;
+}
+
+.enactus-form input,
+.enactus-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  border: 2px solid #fcd34d;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fff7ed;
+  transition: border-color 0.3s;
+}
+
+.enactus-form input:focus,
+.enactus-form textarea:focus {
+  border-color: #f59e0b;
+  outline: none;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.radio-group {
+  margin: 10px 0 20px;
+}
+
+.radio-group label {
+  margin-right: 15px;
+  color: #78350f;
+  font-weight: 500;
+}
+
+.submit-button {
+  background-color: #f59e0b;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #d97706;
+  transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #fbbf24;
+  }
+  to {
+    box-shadow: 0 0 15px #fb923c;
+  }
+}
+.thank-you-message {
+  text-align: center;
+  padding: 60px 30px;
+  background-color: #fff7ed;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.thank-you-message h2 {
+  font-size: 2.5rem;
+  color: #f59e0b;
+  margin-bottom: 20px;
+}
+
+.thank-you-message p {
+  font-size: 1.2rem;
+  color: #92400e;
+}
